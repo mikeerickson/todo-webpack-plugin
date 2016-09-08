@@ -1,6 +1,6 @@
 {
   "name": "todo-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack plugin for generating report of TODO, FIXME, etc",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,10 @@
     "eslint": "eslint \"./**/*.js\" --config .eslintrc.yml || true",
     "lint": "npm run eslint",
     "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikeerickson/todo-webpack-plugin"
   },
   "keywords": [
     "webpack",
