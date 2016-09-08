@@ -1,4 +1,3 @@
-const chalk  = require('chalk')
 const path   = require('path')
 const fs     = require('fs')
 const leasot = require('leasot')
@@ -26,7 +25,7 @@ TodoWebpackPlugin.prototype = {
 
 function reporter(options, files) {
 
-    var todos  = []
+    var todos  = [];
     var output = '';
 
     files.forEach(file => {

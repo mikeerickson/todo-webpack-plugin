@@ -7,9 +7,11 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
 ## Getting Started
 
 1. Install plugin
+
 `$ npm i -D todo-webpack-plugin`
 
 2. Import plugin into webpack.config.js
+
 `var TodoWebpackPlugin = require('todo-webpack-plugin');`
 
 3. Add plugin to plugin section of `webpack.config.js`
