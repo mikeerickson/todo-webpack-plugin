@@ -29,7 +29,7 @@
   "homepage": "https://github.com/mikeerickson/todo-webpack-plugin",
   "devDependencies": {
     "chai": "^3.5.0",
-    "eslint": "^3.4.0",
+    "eslint": "3.4.0",
     "mocha": "3.0.2"
   },
   "dependencies": {
