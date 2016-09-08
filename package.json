@@ -1,0 +1,36 @@
+{
+  "name": "todo-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Webpack plugin for generating report of TODO, FIXME, etc",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm test && npm run eslint",
+    "eslint": "eslint \"./**/*.js\" --config .eslintrc.yml || true",
+    "lint": "npm run eslint",
+    "test": "mocha"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "todo",
+    "fixme",
+    "changeme",
+    "leasot"
+  ],
+  "author": "Mike Erickson <codedungeon@gmail.com> (https://github.com/mikeerickson)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikeerickson/todo-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/mikeerickson/todo-webpack-plugin",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.4.0",
+    "mocha": "3.0.2"
+  },
+  "dependencies": {
+    "leasot": "^3.2.2",
+    "lodash.merge": "^4.6.0"
+  },
+  "reveal": true
+}
