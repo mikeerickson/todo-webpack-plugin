@@ -29,6 +29,12 @@ function reporter(options, files) {
     var output = '';
 
     files.forEach(file => {
+      // skip file if it matches exclude option
+      var exclude = options.exclude;
+      if (exclude instanceof RegExp && exclude.test(file)) {
+        return
+      }
+
       var todo = leasot.parse({
         ext:        path.extname(file),
         content:    fs.readFileSync(file, 'utf8'),
