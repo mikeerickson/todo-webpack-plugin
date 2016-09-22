@@ -34,6 +34,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
         // tags:     ['error','info'], // default will be TODO, FIXME
         // reporter: 'json',           // default `markdown`
         // filename: 'todo.json',      // default `TODO.md`
+        // exclude: /node_modules/     // default scans all subdirs
       })
     ]
     ```
