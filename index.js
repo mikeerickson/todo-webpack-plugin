@@ -29,6 +29,11 @@ function reporter(options, files) {
     var output = '';
 
     files.forEach(file => {
+      // exit cycle if file is not a JavaScript
+      if (['.js'].indexOf(path.extname(file)) < 0) {
+        return;
+      }
+
       var todo = leasot.parse({
         ext:        path.extname(file),
         content:    fs.readFileSync(file, 'utf8'),
