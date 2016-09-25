@@ -5,6 +5,9 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.1.0: Added options
+    - Added `skipUnsupported` option ( see [Leasot Supported Files](https://github.com/pgilad/leasot) )
+- 1.0.4: Internal adjustments
 - 1.0.3: Removed unused dependencies
 - 1.0.2: Internal Release
 - 1.0.1: Configuration Fixes

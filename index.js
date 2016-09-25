@@ -4,9 +4,10 @@ const leasot = require('leasot')
 const merge  = require('lodash/merge')
 
 const DEFAULT_OPTIONS = {
-  console:  true,       // default true
-  tags:     [],         // default TODO
-  reporter: 'markdown', // default markdown
+  console:         true,       // default true
+  tags:            [],         // default TODO
+  reporter:        'markdown', // default markdown
+  skipUnsupported: true,       // skip unsupported files
 }
 
 function TodoWebpackPlugin(options) {
@@ -29,12 +30,18 @@ function reporter(options, files) {
     var output = '';
 
     files.forEach(file => {
+      if (options.skipUnsupported) {
+        if (!leasot.isExtSupported(path.extname(file))) {
+          return;
+        }
+      }
       var todo = leasot.parse({
         ext:        path.extname(file),
         content:    fs.readFileSync(file, 'utf8'),
         fileName:   file,
         customTags: options.tags,
-        reporter:   options.reporter
+        reporter:   options.reporter,
+
       });
       todos = todos.concat(todo);
     })

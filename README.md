@@ -10,11 +10,15 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
 
 1. Install plugin
 
-`$ npm i -D todo-webpack-plugin`
+    `$ npm i -D todo-webpack-plugin`
 
 2. Import plugin into webpack.config.js
 
-`var TodoWebpackPlugin = require('todo-webpack-plugin');`
+    `var TodoWebpackPlugin = require('todo-webpack-plugin');`
+
+    or ES6
+
+    `import TodoWebPackPlugin from 'todo-webpack-plugin'`
 
 3. Add plugin to plugin section of `webpack.config.js`
 
@@ -31,9 +35,11 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
     plugins: [
       new TodoWebpackPlugin({
         console:  true,
-        // tags:     ['error','info'], // default will be TODO, FIXME
-        // reporter: 'json',           // default `markdown`
-        // filename: 'todo.json',      // default `TODO.md`
+        // tags:              ['error','info'], // default will be TODO, FIXME
+        // reporter:          'json',           // default `markdown`
+        // filename:          'todo.json',      // default `TODO.md`
+        // skipUnsupported:   true,             // skip unsupported files
+
       })
     ]
     ```
@@ -46,11 +52,14 @@ variable        type       default          description
 tags            array      todo, fixme      list of optional objects to watch
 reporter        string     markdown         markdown | xml      | json      | text
 filename        string     TODO.md          TODO.md  | todo.xml | todo.json | todo.txt
-console         boolean    true             output report to console ( true | false)
+console         boolean    true             output report to console ( true | false )
+skipUnsupported boolean    true             skip unsupported files ( true | false )
 ```
 
 ## Things To Know
 These are some things I figured you should know (this will be expanded)
+
+- Plugin uses [leasot](https://github.com/pgilad/leasot) internally
 
 - Project inspired by [gulp-todo](https://www.npmjs.com/package/gulp-todo)
 
@@ -59,8 +68,6 @@ These are some things I figured you should know (this will be expanded)
 
 - you can run linting
   `$ npm run lint`
-
-- no ci yet (will be adding circle and travis at some point)
 
 ## Credits
 
