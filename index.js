@@ -1,7 +1,6 @@
 const path   = require('path')
 const fs     = require('fs')
 const leasot = require('leasot')
-const merge  = require('lodash/merge')
 
 const DEFAULT_OPTIONS = {
   console:         true,       // default true
@@ -11,7 +10,7 @@ const DEFAULT_OPTIONS = {
 }
 
 function TodoWebpackPlugin(options) {
-  this.pluginOpts = merge({}, DEFAULT_OPTIONS, options)
+  this.pluginOpts = Object.assign({}, DEFAULT_OPTIONS, options)
 }
 
 TodoWebpackPlugin.prototype = {

@@ -5,6 +5,7 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.2.0: Removed `lodash.merge` dependency, now using ES6 Object.assign
 - 1.1.0: Added options
     - Added `skipUnsupported` option ( see [Leasot Supported Files](https://github.com/pgilad/leasot) )
 - 1.0.4: Internal adjustments
