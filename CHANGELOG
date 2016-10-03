@@ -5,6 +5,9 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.4.0:
+    - Exclude `bower_components` as we are handling `node_modules`
+    - Exclude `vendor` as we are handling `node_modules`
 - 1.3.0: Now removes `node_modules` but default
     - Addresses [Issue 4](https://github.com/mikeerickson/todo-webpack-plugin/issues/4)
     - Support of [PR 3](https://github.com/mikeerickson/todo-webpack-plugin/pull/3)

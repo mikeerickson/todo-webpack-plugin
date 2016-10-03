@@ -28,7 +28,7 @@ function reporter(options, files) {
     var output = '';
 
     files.forEach(file => {
-      if (/node_modules/.test(file)) {
+      if (/node_modules|bower_components|vendor/.test(file)) {
         return; // skip node modules
       }
       if (options.skipUnsupported) {
