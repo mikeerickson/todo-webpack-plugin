@@ -18,7 +18,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
 
     or ES6
 
-    `import TodoWebPackPlugin from 'todo-webpack-plugin'`
+    `import TodoWebpackPlugin from 'todo-webpack-plugin'`
 
 3. Add plugin to plugin section of `webpack.config.js`
 
@@ -58,6 +58,8 @@ skipUnsupported boolean    true             skip unsupported files ( true | fals
 
 ## Things To Know
 These are some things I figured you should know (this will be expanded)
+
+- Plugin ignores `node_modules` globally (ala ESLint)
 
 - Plugin uses [leasot](https://github.com/pgilad/leasot) internally
 
