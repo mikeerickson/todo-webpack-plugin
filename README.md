@@ -18,7 +18,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
 
     or ES6
 
-    `import TodoWebPackPlugin from 'todo-webpack-plugin'`
+    `import TodoWebpackPlugin from 'todo-webpack-plugin'`
 
 3. Add plugin to plugin section of `webpack.config.js`
 
