@@ -24,11 +24,13 @@ TodoWebpackPlugin.prototype = {
 }
 
 function reporter(options, files) {
-
     var todos  = [];
     var output = '';
 
     files.forEach(file => {
+      if (/node_modules/.test(file)) {
+        return; // skip node modules
+      }
       if (options.skipUnsupported) {
         if (!leasot.isExtSupported(path.extname(file))) {
           return;
