@@ -7,6 +7,7 @@ const DEFAULT_OPTIONS = {
   tags:            [],         // default TODO
   reporter:        'markdown', // default markdown
   skipUnsupported: true,       // skip unsupported files
+  suppressFileOutput: false    // dont output to file
 }
 
 function TodoWebpackPlugin(options) {
@@ -62,9 +63,13 @@ function reporter(options, files) {
           outputFilename = 'todo.txt'
         }
       }
-      fs.writeFile(outputFilename, output, (err) => {
-        if (err) throw err
-      })
+
+      if (!options.suppressFileOutput) {
+        fs.writeFile(outputFilename, output, (err) => {
+          if (err) throw err
+        })
+      }
+
     }
 
     return true;
