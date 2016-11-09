@@ -5,6 +5,8 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.5.0:
+    - Added `suppressFileOutput` option to suppress file output to disk
 - 1.4.0:
     - Exclude `bower_components` as we are handling `node_modules`
     - Exclude `vendor` as we are handling `node_modules`
