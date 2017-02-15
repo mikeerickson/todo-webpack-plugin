@@ -1,10 +1,10 @@
+/*global require, describe, it */
 
-
-var chai   = require('chai')
+var chai   = require('chai');
 var expect = chai.expect;
 var should = chai.should();
 var assert = chai.assert;
-var todo   = require('../index')
+var todo   = require('../index');
 
 describe('todo-webpack-plugin', function () {
 
@@ -24,7 +24,7 @@ describe('todo-webpack-plugin', function () {
   });
 
   it('should pass', function (done) {
-    true.should.be.true
+    true.should.be.true;
     done();
   });
 

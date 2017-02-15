@@ -5,6 +5,11 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.7.0:
+    - Added `relativeFilePath` option to output relative file path instead of full path
+    - Applied `relativeFilePath` as default.  If you wish for full path, set this option to false
+- 1.6.0:
+    - Internal Release
 - 1.5.0:
     - Added `suppressFileOutput` option to suppress file output to disk
 - 1.4.0:

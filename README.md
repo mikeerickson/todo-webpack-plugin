@@ -40,6 +40,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
         // filename:          'todo.json',      // default `TODO.md`
         // skipUnsupported:   true,             // skip unsupported files
         // suppressFileOutput false,            // suppress file output to disk
+        // relativeFilePath   true ,            // display relative file paths
 
       })
     ]
@@ -48,7 +49,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
 ## Plugin Options
 
 ```
-variable        type       default          description
+variable        type          default          description
 ===========================================================================================
 tags               array      todo, fixme      list of optional objects to watch
 reporter           string     markdown         markdown | xml      | json      | text
@@ -56,6 +57,7 @@ filename           string     TODO.md          TODO.md  | todo.xml | todo.json |
 console            boolean    true             output report to console ( true | false )
 skipUnsupported    boolean    true             skip unsupported files ( true | false )
 suppressFileOutput boolean    false            suppress output file to disk
+relativeFilePaths  boolean    true             display relative file paths ( true | false )
 ```
 
 ## Things To Know
