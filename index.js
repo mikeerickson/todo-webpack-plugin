@@ -72,7 +72,7 @@ function reporter(options, files) {
       }
 
       if (!options.suppressFileOutput) {
-        if(options.relativeFilePath) {
+        if (options.relativeFilePath) {
           output = relativePath(output);
         }
         fs.writeFile(outputFilename, output, (err) => {
