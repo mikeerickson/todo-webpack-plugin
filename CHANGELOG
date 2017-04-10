@@ -5,6 +5,10 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.8.0:
+    - Added `withInlineFiles` support (Vue support)
+    - Added support for Vue files
+    - Updated to leasot 4.3.1 (support Vue files)
 - 1.7.0:
     - Added `relativeFilePath` option to output relative file path instead of full path
     - Applied `relativeFilePath` as default.  If you wish for full path, set this option to false

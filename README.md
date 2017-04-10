@@ -41,6 +41,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
         // skipUnsupported:   true,             // skip unsupported files
         // suppressFileOutput false,            // suppress file output to disk
         // relativeFilePath   true ,            // display relative file paths
+        // withInlineFiles    false ,           // support inline js (ie Vue)
 
       })
     ]
