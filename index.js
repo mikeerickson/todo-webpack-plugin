@@ -10,7 +10,8 @@ const DEFAULT_OPTIONS = {
   reporter:           'markdown', // default markdown
   skipUnsupported:    true,       // skip unsupported files
   suppressFileOutput: false,      // don't output to file,
-  relativeFilePath:   true        // display relative file paths in report
+  relativeFilePath:   true,       // display relative file paths in report
+  withInlineFiles:    false       // parse possible inline files
 };
 
 function TodoWebpackPlugin(options) {
@@ -41,11 +42,12 @@ function reporter(options, files) {
         }
       }
       var todo = leasot.parse({
-        ext:        path.extname(file),
-        content:    fs.readFileSync(file, 'utf8'),
-        fileName:   file,
-        customTags: options.tags,
-        reporter:   options.reporter,
+        ext:              path.extname(file),
+        content:          fs.readFileSync(file, 'utf8'),
+        fileName:         file,
+        customTags:       options.tags,
+        reporter:         options.reporter,
+        withInlineFiles:  options.withInlineFiles
       });
       todos = todos.concat(todo);
     });
