@@ -3,6 +3,7 @@
 const path   = require('path');
 const fs     = require('fs');
 const leasot = require('leasot');
+const slash  = require('slash');
 
 const DEFAULT_OPTIONS = {
   console:            true,       // default true
@@ -41,7 +42,7 @@ function reporter(options, files) {
           return;
         }
       }
-      var todo = leasot.parse({
+      const todo = leasot.parse({
         ext:              path.extname(file),
         content:          fs.readFileSync(file, 'utf8'),
         fileName:         file,
@@ -65,7 +66,7 @@ function reporter(options, files) {
     output = leasot.reporter(todos, {reporter: options.reporter, spacing: 2});
 
   if (output.length > 0) {
-      var outputFilename = options.filename || '';
+      let outputFilename = options.filename || '';
       if (outputFilename.length === 0) {
         outputFilename = (options.reporter === 'markdown') ? 'TODO.md' : 'todo.' + options.reporter;
         if (options.reporter === 'table') {
@@ -88,7 +89,9 @@ function reporter(options, files) {
 }
 
 function relativePath(output) {
-  let regex = new RegExp(process.cwd() + '/', 'g');
+  const cwd = slash(process.cwd());
+  output = slash(output);
+  const regex = new RegExp(cwd + '/', 'g');
   output = output.replace(regex, '');
   return output;
 }
