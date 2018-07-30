@@ -9,6 +9,7 @@ const DEFAULT_OPTIONS = {
   console:            true,       // default true
   tags:               [],         // default TODO
   reporter:           'markdown', // default markdown
+  reporterOptions:    {},         // additional reporter options
   skipUnsupported:    true,       // skip unsupported files
   suppressFileOutput: false,      // don't output to file,
   relativeFilePath:   true,       // display relative file paths in report
@@ -63,7 +64,10 @@ function reporter(options, files) {
       console.log('\n\n');
     }
 
-    output = leasot.reporter(todos, {reporter: options.reporter, spacing: 2});
+    output = leasot.reporter(todos, Object.assign({
+      reporter: options.reporter,
+      spacing: 2
+    }, options.reporterOptions));
 
   if (output.length > 0) {
       let outputFilename = options.filename || '';
