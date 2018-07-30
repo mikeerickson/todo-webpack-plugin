@@ -33,7 +33,7 @@
     "mocha": "3.2.0"
   },
   "dependencies": {
-    "leasot": "4.3.1",
+    "leasot": "^6.3.0",
     "slash": "^2.0.0"
   },
   "engine": "node >= 0.4.4",
