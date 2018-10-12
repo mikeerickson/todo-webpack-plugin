@@ -5,6 +5,10 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.9.0
+    - Fixed compatiblity with Webpack 4
+    - Migrated to new .hooks interface with Webpack 4 plugin
+
 - 1.8.0:
     - Added `withInlineFiles` support (Vue support)
     - Added support for Vue files
