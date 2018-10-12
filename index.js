@@ -22,7 +22,7 @@ function TodoWebpackPlugin(options) {
 TodoWebpackPlugin.prototype = {
   constructor: TodoWebpackPlugin,
 
-  apply:  (compiler) => {
+  apply: function (compiler) {
     compiler.hooks.done.tap('TodoWebpackPlugin', params => {
       return reporter(this.pluginOpts, compiler._lastCompilationFileDependencies);
     });
