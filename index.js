@@ -66,7 +66,7 @@ function reporter(options, files) {
     if (options.relativeFilePath) {
       output = relativePath(output);
     }
-    console.log(output); // eslint-disable-line
+    console.log(output + '\n'); // eslint-disable-line
   }
 
   output = leasot.reporter(todos, {reporter: options.reporter, spacing: 2});
