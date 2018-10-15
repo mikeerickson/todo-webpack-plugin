@@ -24,7 +24,9 @@ TodoWebpackPlugin.prototype = {
 
   apply: function (compiler) {
     compiler.hooks.done.tap('TodoWebpackPlugin', params => {
-      return reporter(this.pluginOpts, compiler._lastCompilationFileDependencies);
+      // dd(Object.keys(params.compilation.compiler.records.modules.byIdentifier));
+      let files = params.compilation.compiler.records.modules.byIdentifier;
+      return reporter(this.pluginOpts, Object.keys(files));
     });
   }
 };
@@ -33,15 +35,21 @@ function reporter(options, files) {
   let todos = [];
   let output = '';
 
-  files.forEach(file => {
-    if (/node_modules|bower_components|vendor/.test(file)) {
-      return; // skip node modules
+  let testFiles = [];
+  files.forEach((filename) => {
+    if (filename.includes('!')) {
+      let parts = filename.split('!');
+      parts.length > 1 ? testFiles.push(parts[1]) : '';
     }
+  });
+
+  testFiles.forEach(file => {
     if (options.skipUnsupported) {
       if (!leasot.isExtSupported(path.extname(file))) {
         return;
       }
     }
+
     const todo = leasot.parse({
       ext: path.extname(file),
       content: fs.readFileSync(file, 'utf8'),
@@ -54,13 +62,11 @@ function reporter(options, files) {
   });
 
   if (options.console) {
-    console.log('\n');
     output = leasot.reporter(todos, {reporter: 'table', spacing: 2});
     if (options.relativeFilePath) {
       output = relativePath(output);
     }
     console.log(output); // eslint-disable-line
-    console.log('\n\n');
   }
 
   output = leasot.reporter(todos, {reporter: options.reporter, spacing: 2});
