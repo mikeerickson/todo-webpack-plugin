@@ -36,12 +36,15 @@ function reporter(options, files) {
   let output = '';
 
   let testFiles = [];
-  files.forEach((filename) => {
-    if (filename.includes('!')) {
-      let parts = filename.split('!');
-      parts.length > 1 ? testFiles.push(parts[1]) : '';
+  for (let i = 0; i < files.length; i++) {
+    if (files[i].includes('!')) {
+      let parts = files[i].split('!');
+      (parts.length > 1)
+        ? (testFiles.indexOf(parts[1]))
+          ? testFiles.push(parts[1]) : null
+        : null;
     }
-  });
+  }
 
   testFiles.forEach(file => {
     if (options.skipUnsupported) {
