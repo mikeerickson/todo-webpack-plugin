@@ -36,6 +36,6 @@
     "leasot": "6.6.2",
     "slash": "2.0.0"
   },
-  "engine": "node >= 0.4.4",
+  "engine": "node >= 0.8.0",
   "reveal": true
 }
