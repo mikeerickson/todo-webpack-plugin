@@ -24,7 +24,13 @@ TodoWebpackPlugin.prototype = {
 
   apply: function (compiler) {
     compiler.hooks.done.tap('TodoWebpackPlugin', params => {
-      return reporter(this.pluginOpts, compiler._lastCompilationFileDependencies);
+      if (typeof compiler._lastCompilationFileDependencies === 'undefined') {
+        let files = params.compilation.compiler.records.modules.byIdentifier;
+        return reporter(this.pluginOpts, Object.keys(files));
+      }
+      else {
+        return reporter(this.pluginOpts, compiler._lastCompilationFileDependencies);
+      }
     });
   }
 };

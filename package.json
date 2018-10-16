@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "all": "npm test && npm run eslint",
+    "build": "./node_modules/.bin/webpack --hide-modules --mode development",
     "eslint": "eslint \"./**/*.js\" --config .eslintrc.yml || true",
     "lint": "npm run eslint",
-    "test": "mocha"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -28,11 +29,15 @@
   },
   "homepage": "https://github.com/mikeerickson/todo-webpack-plugin",
   "devDependencies": {
+    "ava": "1.0.0-rc.1",
     "chai": "^4.0.1",
     "eslint": "5.5.0",
-    "mocha": "5.2.0"
+    "mocha": "5.2.0",
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2"
   },
   "dependencies": {
+    "dumper.js": "1.2.0",
     "leasot": "6.6.2",
     "slash": "2.0.0"
   },
