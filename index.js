@@ -24,9 +24,7 @@ TodoWebpackPlugin.prototype = {
 
   apply: function (compiler) {
     compiler.hooks.done.tap('TodoWebpackPlugin', params => {
-      // dd(Object.keys(params.compilation.compiler.records.modules.byIdentifier));
-      let files = params.compilation.compiler.records.modules.byIdentifier;
-      return reporter(this.pluginOpts, Object.keys(files));
+      return reporter(this.pluginOpts, compiler._lastCompilationFileDependencies);
     });
   }
 };
@@ -34,17 +32,7 @@ TodoWebpackPlugin.prototype = {
 function reporter(options, files) {
   let todos = [];
   let output = '';
-
-  let testFiles = [];
-  for (let i = 0; i < files.length; i++) {
-    if (files[i].includes('!')) {
-      let parts = files[i].split('!');
-      (parts.length > 1)
-        ? (testFiles.indexOf(parts[1]))
-          ? testFiles.push(parts[1]) : null
-        : null;
-    }
-  }
+  let testFiles = files;
 
   testFiles.forEach(file => {
     if (options.skipUnsupported) {
