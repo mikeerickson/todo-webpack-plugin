@@ -35,7 +35,7 @@ TodoWebpackPlugin.prototype = {
   }
 };
 
-function reporter(options, files) {
+function reporter(options, files = []) {
   let todos = [];
   let output = '';
   let testFiles = files;
