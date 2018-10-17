@@ -38,7 +38,7 @@ TodoWebpackPlugin.prototype = {
 function reporter(options, files) {
   let todos = [];
   let output = '';
-  let testFiles = files;
+  let testFiles = files ? files : [];
 
   testFiles.forEach(file => {
     if (options.skipUnsupported) {
