@@ -5,6 +5,12 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.9.7 :: 1.9.1
+    - Added additionally conditional support for Webpack 4, remove warning of `Tapable` access
+      using new Webpack 4 API.
+    - Fix condition when `undefined` files reference passed to reporter which conditonally occurs
+      based on method of execution
+
 - 1.9.0
     - Fixed compatiblity with Webpack 4
     - Migrated to new .hooks interface with Webpack 4 plugin

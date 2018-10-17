@@ -1,9 +1,11 @@
 # todo-webpack-plugin
+
 Brought to you by [codedungeon](http://www.codedungeon.org)
 
 npm link [https://www.npmjs.com/package/todo-webpack-plugin](https://www.npmjs.com/package/todo-webpack-plugin)
 
 ## Overview
+
 Webpack Plugin to generate TODO report (markdown, json, xml or text format) and optionally to `stdout` (console)
 
 ## Getting Started
@@ -49,7 +51,7 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
 
 ## Plugin Options
 
-```
+```bash
 variable        type          default          description
 ===========================================================================================
 tags               array      todo, fixme      list of optional objects to watch
@@ -62,6 +64,7 @@ relativeFilePaths  boolean    true             display relative file paths ( tru
 ```
 
 ## Things To Know
+
 These are some things I figured you should know (this will be expanded)
 
 - Plugin ignores `node_modules` globally (ala ESLint)
