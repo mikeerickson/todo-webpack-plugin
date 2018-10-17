@@ -1,6 +1,6 @@
 # todo-webpack-plugin
 
-Brought to you by [codedungeon](http://www.codedungeon.org)
+Brought to you by [codedungeon](http://www.codedungeon.io)
 
 npm link [https://www.npmjs.com/package/todo-webpack-plugin](https://www.npmjs.com/package/todo-webpack-plugin)
 
