@@ -87,4 +87,4 @@ E-Mail: [codedungeon@gmail.com](mailto:codedungeon@gmail.com)
 
 Twitter: [@codedungeon](http://twitter.com/codedungeon)
 
-Website: [codedungeon.org](http://codedungeon.org)
+Website: [codedungeon.io](http://codedungeon.io)
