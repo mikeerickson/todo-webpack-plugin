@@ -6,13 +6,13 @@ const leasot = require('leasot');
 const slash = require('slash');
 
 const DEFAULT_OPTIONS = {
-  console: true,       // default true
-  tags: [],         // default TODO
+  console: true, // default true
+  tags: [], // default TODO
   reporter: 'markdown', // default markdown
-  skipUnsupported: true,       // skip unsupported files
-  suppressFileOutput: false,      // don't output to file,
-  relativeFilePath: true,       // display relative file paths in report
-  withInlineFiles: false       // parse possible inline files
+  skipUnsupported: true, // skip unsupported files
+  suppressFileOutput: false, // don't output to file,
+  relativeFilePath: true, // display relative file paths in report
+  withInlineFiles: false // parse possible inline files
 };
 
 function TodoWebpackPlugin(options) {
@@ -22,20 +22,17 @@ function TodoWebpackPlugin(options) {
 TodoWebpackPlugin.prototype = {
   constructor: TodoWebpackPlugin,
 
-  apply: function (compiler) {
+  apply: function(compiler) {
     compiler.hooks.done.tap('TodoWebpackPlugin', params => {
-      if (typeof compiler._lastCompilationFileDependencies === 'undefined') {
-        let files = params.compilation.compiler.records.modules.byIdentifier;
-        return reporter(this.pluginOpts, Object.keys(files));
-      }
-      else {
-        return reporter(this.pluginOpts, compiler._lastCompilationFileDependencies);
-      }
+      return reporter(
+        this.pluginOpts,
+        compiler._lastCompilationFileDependencies
+      );
     });
   }
 };
 
-function reporter(options, files = []) {
+function reporter(options, files) {
   let todos = [];
   let output = '';
   let testFiles = files;
@@ -59,19 +56,22 @@ function reporter(options, files = []) {
   });
 
   if (options.console) {
-    output = leasot.reporter(todos, {reporter: 'table', spacing: 2});
+    output = leasot.reporter(todos, { reporter: 'table', spacing: 2 });
     if (options.relativeFilePath) {
       output = relativePath(output);
     }
-    console.log(output + '\n'); // eslint-disable-line
+    console.log(output + "\n"); // eslint-disable-line
   }
 
-  output = leasot.reporter(todos, {reporter: options.reporter, spacing: 2});
+  output = leasot.reporter(todos, { reporter: options.reporter, spacing: 2 });
 
   if (output.length > 0) {
     let outputFilename = options.filename || '';
     if (outputFilename.length === 0) {
-      outputFilename = (options.reporter === 'markdown') ? 'TODO.md' : 'todo.' + options.reporter;
+      outputFilename =
+        options.reporter === 'markdown'
+          ? 'TODO.md'
+          : 'todo.' + options.reporter;
       if (options.reporter === 'table') {
         outputFilename = 'todo.txt';
       }
@@ -81,14 +81,13 @@ function reporter(options, files = []) {
       if (options.relativeFilePath) {
         output = relativePath(output);
       }
-      fs.writeFile(outputFilename, output, (err) => {
+      fs.writeFile(outputFilename, output, err => {
         if (err) throw err;
       });
     }
   }
 
   return true;
-
 }
 
 function relativePath(output) {

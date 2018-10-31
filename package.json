@@ -6,7 +6,7 @@
   "scripts": {
     "all": "npm test && npm run eslint",
     "build": "./node_modules/.bin/webpack --hide-modules --mode development",
-    "eslint": "eslint \"./**/*.js\" --config .eslintrc.yml || true",
+    "eslint": "eslint \"./**/*.js\" --config .eslintrc.js || true",
     "lint": "npm run eslint",
     "test": "ava"
   },
