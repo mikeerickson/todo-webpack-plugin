@@ -3,7 +3,13 @@
   "version": "1.9.8",
   "description": "Webpack plugin for generating report of TODO, FIXME, etc",
   "main": "index.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
+  },
   "scripts": {
+    "pre-commit": "npm test && npm run eslint",
     "all": "npm test && npm run eslint",
     "build": "./node_modules/.bin/webpack --hide-modules --mode development",
     "eslint": "eslint \"./**/*.js\" --config .eslintrc.js || true",
@@ -31,13 +37,15 @@
   "devDependencies": {
     "ava": "1.0.0-rc.1",
     "chai": "^4.0.1",
+    "chalk": "2.4.1",
+    "dumper.js": "1.2.0",
     "eslint": "5.5.0",
+    "husky": "1.1.3",
     "mocha": "5.2.0",
     "webpack": "4.20.2",
     "webpack-cli": "3.1.2"
   },
   "dependencies": {
-    "dumper.js": "1.2.0",
     "leasot": "6.6.2",
     "slash": "2.0.0"
   },

@@ -1,4 +1,6 @@
 /* global require, module */
+/* eslint no-console: 0 */
+/* eslint no-unused-vars: 0 */
 
 const path = require('path');
 const fs = require('fs');
@@ -38,6 +40,12 @@ function reporter(options, files) {
   let testFiles = files;
 
   testFiles.forEach(file => {
+    // skip source files from node_modules
+    // https://github.com/mikeerickson/todo-webpack-plugin/issues/21
+    if (file.match(/node_modules/g)) {
+      return;
+    }
+
     if (options.skipUnsupported) {
       if (!leasot.isExtSupported(path.extname(file))) {
         return;

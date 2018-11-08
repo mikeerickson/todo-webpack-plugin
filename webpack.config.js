@@ -7,9 +7,7 @@ const config = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  plugins: [
-    new TodoWebpackPlugin({})
-  ]
+  plugins: [new TodoWebpackPlugin({ console: true })]
 };
 
 module.exports = config;
