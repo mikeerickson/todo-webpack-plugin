@@ -28,7 +28,7 @@ TodoWebpackPlugin.prototype = {
     compiler.hooks.done.tap('TodoWebpackPlugin', params => {
       return reporter(
         this.pluginOpts,
-        compiler._lastCompilationFileDependencies
+        params.compilation.fileDependencies
       );
     });
   }
