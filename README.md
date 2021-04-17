@@ -37,13 +37,13 @@ Webpack Plugin to generate TODO report (markdown, json, xml or text format) and 
     plugins: [
       new TodoWebpackPlugin({
         console:  true,
-        // tags:              ['error','info'], // default will be TODO, FIXME
-        // reporter:          'json',           // default `markdown`
-        // filename:          'todo.json',      // default `TODO.md`
-        // skipUnsupported:   true,             // skip unsupported files
-        // suppressFileOutput false,            // suppress file output to disk
-        // relativeFilePath   true ,            // display relative file paths
-        // withInlineFiles    false ,           // support inline js (ie Vue)
+        // tags:               ['error','info'], // default will be TODO, FIXME
+        // reporter:           'json',           // default `markdown`
+        // filename:           'todo.json',      // default `TODO.md`
+        // skipUnsupported:    true,             // skip unsupported files
+        // suppressFileOutput: false,            // suppress file output to disk
+        // relativeFilePath:   true ,            // display relative file paths
+        // withInlineFiles:    false ,           // support inline js (ie Vue)
 
       })
     ]
