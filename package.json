@@ -1,6 +1,6 @@
 {
   "name": "todo-webpack-plugin",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Webpack plugin for generating report of TODO, FIXME, etc",
   "main": "index.js",
   "husky": {
