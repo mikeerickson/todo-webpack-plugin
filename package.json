@@ -46,7 +46,7 @@
     "webpack-cli": "3.1.2"
   },
   "dependencies": {
-    "leasot": "6.6.2",
+    "leasot": "11.4.0",
     "slash": "2.0.0"
   },
   "engine": "node >= 0.8.0",

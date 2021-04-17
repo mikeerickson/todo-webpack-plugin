@@ -5,6 +5,11 @@ See README.md for complete details of this project
 
 ### Just the changes
 
+- 1.10.1
+
+- Cleaned up documentation, adding missing colons
+    - https://github.com/mikeerickson/todo-webpack-plugin/pull/32
+
 - 1.9.7 :: 1.9.1
     - Added additionally conditional support for Webpack 4, remove warning of `Tapable` access
       using new Webpack 4 API.
